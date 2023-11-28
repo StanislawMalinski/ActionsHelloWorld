@@ -15,7 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build and Run Project
+      - name: Build 
+        run: dotnet build
+
+      - name: Test
+        run: dotnet run -Test
+
+      - name: Run
         run: dotnet run
 
       - name: Cleaning
