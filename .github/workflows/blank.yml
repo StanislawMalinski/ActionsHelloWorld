@@ -16,13 +16,13 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build 
-        run: dotnet build
+        run: dotnet build --project HelloWorld
 
       - name: Test
-        run: dotnet run -Test
+        run: dotnet test Tests/Tests.csproj 
 
       - name: Run
-        run: dotnet run
+        run: dotnet run --project HelloWorld
 
       - name: Cleaning
         run: find . -type d \( -name "bin" -o -name "obj" \) -exec rm -r {} +
