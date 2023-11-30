@@ -37,7 +37,7 @@ jobs:
           # The project in the Azure Devops organization
           project: MWO_Lab_1_Exercises_2
           # Access token to call the Azure Devops
-          azure-devops-token: "PAT"
+          azure-devops-token: "vytg6qbyt6x2iwd2dxbnqan776llamgkmpcsx33slq4doyxjp4wq"
           # The title of the work item
           workitem-title: "Unit test bug"
           # The description of the work item
