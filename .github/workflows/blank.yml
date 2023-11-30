@@ -26,3 +26,28 @@ jobs:
 
       - name: Cleaning
         run: find . -type d \( -name "bin" -o -name "obj" \) -exec rm -r {} +
+
+      - name: GitHub Action to create an Azure DevOps Bug Workitem when a workflow fails
+        # You may pin to the exact commit or the version.
+        # uses: stefanstranger/azuredevops-bug-action@724be30c1df110bdcf154db3870ec257d8209d54
+        uses: stefanstranger/azuredevops-bug-action@1.1
+        with:
+          # Name of Azure DevOps Organization
+          OrganizationName: MWO-MFSW
+          # Name of Github Action environment variable for PAT
+          PAT: "PAT"
+          # Name of Azure DevOps Project
+          ProjectName: MWO_Lab_1_Exercises_2
+          # Azure DevOps Area Path. Example: 'Contoso\Automation'
+          AreaPath: MWO_Lab_1_Exercises_2
+          # Azure DevOps Iteration Path. Example: 'Contoso'
+          IterationPath: Iteration 2
+          # Github Token value stored as secret
+          GithubToken: "GithubToken"
+          # Github Workflow file name
+          WorkflowFileName: blank.yml
+        env:
+          PAT: ${{ Secrets.PAT}}
+          GithubToken: ${{ Secrets.githubtoken}}
+          
+          
