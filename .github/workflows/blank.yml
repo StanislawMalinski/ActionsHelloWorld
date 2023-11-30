@@ -47,7 +47,7 @@ jobs:
           # Github Workflow file name
           WorkflowFileName: blank.yml
         env:
-          PAT: ${{ Secrets.PAT}}
-          GithubToken: ${{ Secrets.githubtoken}}
+          PAT: ${{ secrets.PAT}}
+          GithubToken: ${{ secrets.githubtoken}}
           
           
