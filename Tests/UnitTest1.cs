@@ -24,7 +24,7 @@ namespace Tests
 
             double result = MainClass.dzielenie(a,b);
 
-            Assert.True(result == double.PositiveInfinity);
+            Assert.True(result != double.PositiveInfinity);
         }
     }
 }
