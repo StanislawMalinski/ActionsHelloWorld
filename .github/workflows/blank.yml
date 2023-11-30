@@ -26,3 +26,23 @@ jobs:
 
       - name: Cleaning
         run: find . -type d \( -name "bin" -o -name "obj" \) -exec rm -r {} +
+
+      - name: azure-work-item
+        uses: grandmasterdev/github-action-azure-work-item@v1.0.0
+        with:
+          # The action that you want to trigger. Accepted values ["bug", "user-story"]
+          action: "bug"
+          # Azure Devops organization
+          organization: MWO-MFSW
+          # The project in the Azure Devops organization
+          project: MWO_Lab_1_Exercises_2
+          # Access token to call the Azure Devops
+          azure-devops-token: "vytg6qbyt6x2iwd2dxbnqan776llamgkmpcsx33slq4doyxjp4wq"
+          # The title of the work item
+          workitem-title: "Unit test bug"
+          # The description of the work item
+          workitem-description: "The bug occured while running unit tests"
+        env:
+          PAT: ${{ secrets.PAT}}
+          
+          
